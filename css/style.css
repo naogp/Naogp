@@ -1,0 +1,629 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-family: Roboto;
+  line-height: 1.6;
+  color: #333;
+}
+
+h2,h3{
+  font-family: DM Serif Display;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  background: transparent;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  z-index: 1000;
+}
+
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Dividi in 3 parti */
+.navbar-left,
+.navbar-center,
+.navbar-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo a sinistra */
+.navbar-left {
+  justify-content: flex-start;
+}
+
+/* Link al centro */
+.navbar-center {
+  justify-content: center;
+}
+
+/* (per ora vuoto) navbar-right */
+.navbar-right {
+  justify-content: flex-end;
+}
+
+/* Stile dei link */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+  text-align: center;
+  font-family: DM Serif Display;
+}
+
+.nav-links li a:hover {
+  color: #e23333;
+}
+
+/* Logo */
+.navbar-logo {
+  height: 60px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Riempie senza deformare */
+  z-index: -1; /* Video dietro al testo */
+}
+
+.hero-content {
+  z-index: 1; /* Testo sopra al video */
+  text-align: center;
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #e23333;
+  color: #fff;
+  border-radius: 20px;
+  text-decoration: none;
+  margin-top: 530px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover { background: #e60000;}
+
+.section {
+  padding: 80px 20px;
+  background: #f4f4f4;
+}
+
+.section:nth-of-type(even) { background: #fff; }
+
+/* Footer */
+.footer {
+  background: #2b313b;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer .social-links {
+  margin-top: 20px;
+}
+
+.footer .social-icon {
+  display: inline-block;
+  margin: 0 15px;
+  width: 40px;
+  height: 40px;
+}
+
+.footer .social-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.footer .social-icon:hover img {
+  transform: scale(1.1);
+}
+
+
+/* Cards Eventi */
+
+.cards-titoli{
+  text-align: center;
+}
+
+.cards-titoli h2{
+  color: #2b313b;
+  font-size: 2.8rem;
+}
+
+.cards-titoli p{
+  font-size: 1.2rem;
+}
+
+.eventi-grid {
+  display: flex; /* Usa flexbox, NON grid */
+  flex-wrap: wrap; /* Le card vanno a capo se lo spazio finisce */
+  justify-content: center; /* Centra le card */
+  gap: 30px; /* Spaziatura fra le card */
+  padding: 30px;
+}
+
+.card {
+  width: 450px; /* dimensione fissa */
+  height: 550px; /* altezza fissa */
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 90%; /* sui tablet e telefoni le card diventano larghe quasi tutto */
+    height: 400px; /* leggermente più basse sui dispositivi piccoli */
+  }
+}
+
+
+/* Inizialmente nascondi il testo */
+.card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6); /* Trasparente scuro */
+  color: #fff;
+  opacity: 0;
+  transform: translateY(100%); /* Nasconde il testo sotto la card */
+  transition: opacity 0.3s, transform 0.3s; /* Aggiungi una transizione */
+}
+
+.card-content h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  visibility: visible; /* Titolo sempre visibile */
+  text-align: center;
+}
+
+.card-content p {
+  font-size: 1rem;
+  color: #fff;
+  visibility: hidden; /* Il testo è nascosto inizialmente */
+  opacity: 0; /* Nascondi il paragrafo */
+  transition: visibility 0s 0.3s, opacity 0.3s ease; /* Transizione per il paragrafo */
+}
+
+/* Quando si passa sopra con il cursore, mostra il paragrafo */
+.card:hover .card-content p {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover effetto per la card */
+.card:hover {
+  transform: translateY(-5px); /* Effetto di sollevamento quando hoverata */
+}
+
+.card:hover .card-content {
+  opacity: 1;
+  transform: translateY(0); /* Rende visibile il contenuto quando la card viene hoverata */
+}
+
+.card-content h3:hover{
+  color:#e23333;
+  cursor: pointer;
+}
+
+
+
+/* Responsività con media queries */
+
+/* Tablet: tra 600px e 991px */
+@media (max-width: 991px) {
+  .card {
+    flex: 0 1 45%;
+    height: 320px;
+  }
+
+  .card-content {
+    padding: 10px;
+  }
+
+  .card-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .card-content p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Smartphone: sotto 600px */
+@media (max-width: 600px) {
+  .eventi-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .card {
+    width: 90%;
+    height: 250px;
+  }
+
+  .card-content {
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .card-content h3 {
+    font-size: 1rem;
+  }
+
+  .card-content p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Grande TV: sopra 1200px */
+@media (min-width: 1200px) {
+  .card {
+    flex: 0 1 250px;
+    height: 400px;
+  }
+}
+
+/* Immagini e video globali */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* Sponsor Section */
+.sponsor-section {
+  background: #fff;
+  padding: 80px 0; /* Solo padding verticale */
+  width: 100%; /* La sezione occuperà il 100% della larghezza */
+  overflow: hidden; /* Nasconde qualsiasi contenuto che esca fuori dalla sezione */
+}
+
+.sponsor-slider {
+  display: flex;
+  width: 100%;
+}
+
+.sponsor-track {
+  display: flex;
+  width: 200%; /* Doppio della larghezza per il loop continuo */
+  animation: scrollSponsors 30s linear infinite;
+}
+
+.sponsor-track img {
+  height: 80px;
+  margin: 0 80px;
+  object-fit: contain;
+}
+
+
+
+/* Animazione per lo scorrimento infinito */
+@keyframes scrollSponsors {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } 
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero { padding: 0 10px; }
+  .btn { padding: 8px 16px; }
+  .sponsor-section {
+    padding: 40px 10px; /* Riduci il padding per schermi più piccoli */
+  }
+}
+
+
+/* Responsività con media queries */
+
+/* Tablet */
+@media (max-width: 991px) {
+  .eventi-grid {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .card {
+    flex: 0 1 45%; /* Due card per riga */
+    height: 350px;
+  }
+}
+
+/* Smartphone */
+@media (max-width: 600px) {
+  .eventi-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%; /* Quasi tutta la larghezza del cellulare */
+    height: 300px;
+  }
+}
+
+/* Grandi TV o grandi schermi */
+@media (min-width: 1200px) {
+  .card {
+    flex: 0 1 250px;
+    height: 400px;
+  }
+}
+
+.tasto-team{
+  display: inline-block;
+  padding: 10px 20px;
+  background: #e23333;
+  color: #fff;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.tasto-team:hover{
+  background-color: #812323;
+}
+
+.chi-siamo-section {
+  background: #fff;
+  padding: 80px 20px;
+}
+
+.container-chi-siamo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.chi-siamo-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.chi-siamo-text h2{
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color:#2b313b;
+}
+
+.chi-siamo-text p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+.chi-siamo-image {
+  flex: 1;
+  max-width: 500px;
+}
+
+.image-wrapper {
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+/* Effetto Hover sull'immagine */
+.image-wrapper:hover img {
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container-chi-siamo {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+}
+
+.titoli-cards{
+  color:#fff;
+  text-decoration: none;
+}
+
+/* pagina INTERAZIONE NAO */
+.main-content {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.content-section {
+  margin-bottom: 2rem;
+}
+
+.content-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #e23333;
+}
+
+.content-section ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+/* Galleria Video */
+.video-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 60px;
+  padding-bottom: 60px;
+}
+
+.video-wrapper {
+  width: 300px;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .video-wrapper {
+    width: 100%;
+  }
+}
+
+.hero-nao {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-video-nao {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-nao-content {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+
+}
+
+.hero-title-nao {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-family: 'DM Serif Display';
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+.btn-scopri {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #ff4d4d;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-scopri:hover {
+  background-color: #e60000;
+  transform: scale(1.05);
+}
+
+/* progetto */
+.hero-progetto {
+  background: url('../img/sfondo-pistakart.png') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.hero-content-progetto h2 {
+  font-size: 3rem;
+}
+
+.hero-content-progetto p {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAO</title>
+  <link rel="stylesheet" href="../css/team.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link href="../img/logo-nao.png" rel="icon">
+
+  <!--Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-left">
+        <a href="#" class="logo">
+          <img src="../img/logo-nao.png" alt="Logo NaoGP" class="navbar-logo">
+        </a>
+      </div>
+  
+      <div class="navbar-center">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../pages/team.html">Team</a></li>
+        </ul>
+      </div>
+  
+      <div class="navbar-right">
+        <!-- qui in futuro possiamo mettere social o altro -->
+      </div>
+    </div>
+  </nav>
+
+  </div>
+</header>
+
+
+<section id="hero" class="hero-nao">
+    <video id="heroVideo" autoplay muted playsinline loop class="hero-video-nao">
+      <source src="../img/video/Video-interazione-nao.mp4" type="video/mp4">
+      Il tuo browser non supporta il video HTML5.
+    </video>
+  
+    <div class="hero-nao-content" data-aos="fade-up">
+      <h1 class="hero-title-nao">Scopri il mondo di NAO</h1>
+      <a href="#main-content" class="btn-scopri">Scopri di più</a>
+    </div>
+  </section>
+  
+
+<main class="main-content">
+    <section class="content-section" data-aos="fade-up">
+      <h2>Cos'è NAO?</h2>
+      <p>
+        NAO è un robot umanoide sviluppato per l'educazione, la ricerca e l'interazione sociale. Con i suoi sensori avanzati e capacità di movimento, NAO è utilizzato in tutto il mondo per insegnare programmazione, robotica e intelligenza artificiale.
+      </p>
+    </section>
+
+    <section class="content-section" data-aos="fade-up">
+      <h2>Caratteristiche Tecniche</h2>
+      <ul>
+        <li>Altezza: 58 cm</li>
+        <li>Gradi di libertà: 25</li>
+        <li>Sensori: telecamere, microfoni, giroscopio, accelerometro</li>
+        <li>Connettività: Wi-Fi, Ethernet</li>
+        <li>Software: NAOqi OS</li>
+      </ul>
+    </section>
+
+
+    <section class="video-gallery" data-aos="fade-up">
+        <div class="video-wrapper">
+          <video src="../img/video/video-nao/video-nao-cammina.mp4" autoplay muted loop playsinline></video>
+        </div>
+        <div class="video-wrapper">
+          <video src="../img/video/video-nao/video-nao-f1.mp4" autoplay muted loop playsinline></video>
+        </div>
+        <div class="video-wrapper">
+          <video src="../img/video/video-nao/video-nao-dance.MP4" autoplay muted loop playsinline></video>
+        </div>
+      </section>
+
+      <section id="main-content" class="content-section" data-aos="fade-up">
+        <h2>L'integrazione del NAO nel nostro progetto</h2>
+        <p>
+            Il NAO interagirà direttamente con il giocatore basandosi sui dati che gli arrivano. Usando un server MQTT invieremo un serie di dati utili come il tempo del giro, input di acceleratore e freno durante il giro. Come ingegnere di pista incoraggerà il pilota a migliorare il passo gara motivandolo, oppure (usando l’algoritmo per analisi telemetrie) consiglierà al pilota come migliorare il giro. <strong>Esempi:</strong>
+        </p>
+
+        <p>
+            <strong>Feedback Tecnico</strong>
+        </p>
+          <ul>
+            <li>"Attenzione, hai frenato troppo tardi in questa curva. Prova a frenare un po' prima nel prossimo giro."</li>
+            <li>"Stai accelerando troppo presto in uscita dalla curva. Questo riduce la tua velocità massima sul rettilineo."</li>
+            <li>"Ottimo lavoro in questa curva, hai mantenuto la traiettoria ideale!"</li>
+            <li>"Prova a ridurre leggermente l'angolo di sterzata qui per migliorare la fluidità del movimento."</li>
+            <li>"Il tuo tempo sul giro è migliorato di mezzo secondo, continua così!"</li>
+          </ul>
+
+          <p>
+            <strong>Motivazione</strong>
+        </p>
+          <ul>
+            <li>"Sei sulla strada giusta! Continua a spingere e vedrai i risultati."</li>
+            <li>"Non ti preoccupare per questo errore, concentrati sul prossimo giro."</li>
+            <li>"Fantastico, stai migliorando! Hai fatto un tempo migliore rispetto al giro precedente."</li>
+            <li>"Sei molto vicino al tuo record personale, dai il massimo!"</li>
+          </ul>
+
+          <p>
+            <strong>Strategia</strong>
+        </p>
+          <ul>
+            <li>"Prova a mantenere una velocità costante nel prossimo settore per risparmiare tempo."</li>
+            <li>"Cerca di utilizzare tutta la larghezza della pista per ottimizzare la traiettoria."</li>
+            <li>"Riduci la velocità in curva per avere una migliore accelerazione in uscita."</li>
+          </ul>
+
+          <p>
+            <strong>Coinvolgimento del Pilota</strong>
+        </p>
+          <ul>
+            <li>"Come ti senti alla guida? Vuoi un consiglio per migliorare questa sezione?"</li>
+            <li>"Hai notato la differenza di traiettoria in questa curva? Proviamo a lavorarci insieme."</li>
+            <li>"BOX BOX. Torna ai box, ti mostro i tuoi dati di telemetria per capire meglio dove migliorare."</li>
+          </ul>
+
+
+      </section>
+      
+  </main>
+  
+
+
+
+<footer class="footer">
+    <div class="">
+      <h2>Follow us :3</h2>
+      <div class="social-links">
+        <a href="https://www.facebook.com/FermiOfficial?locale=it_IT" target="_blank" class="social-icon">
+          <img src="../img/icone/facebook_1384005.png" alt="Facebook">
+        </a>
+        <a href="https://www.tiktok.com/@naogp_?is_from_webapp=1&sender_device=pc" target="_blank" class="social-icon">
+          <img src="../img/icone/tiktok_3116491.png" alt="TikTok">
+        </a>
+        <a href="https://www.instagram.com/naogp_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" target="_blank" class="social-icon">
+          <img src="../img/icone/instagram_1384015.png" alt="Instagram">
+        </a>
+        <a href="https://www.youtube.com/@naogpracing" target="_blank" class="social-icon">
+          <img src="../img/icone/youtube_1384012.png" alt="YouTube">
+        </a>
+  
+      </div>
+      <p>&copy; 2025 NaoGP. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
+  
+  <script>
+    window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) { // dopo 50px di scroll
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+  </script>
+  
+  <script src="../js/team.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+  </body>
+  </html>
