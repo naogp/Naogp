@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIOCO</title>
+  <link rel="stylesheet" href="../css/team.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link href="../img/logo-nao.png" rel="icon">
+
+  <!--Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-left">
+        <a href="#" class="logo">
+          <img src="../img/logo-nao.png" alt="Logo NaoGP" class="navbar-logo">
+        </a>
+      </div>
+  
+      <div class="navbar-center">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../pages/team.html">Team</a></li>
+        </ul>
+      </div>
+  
+      <div class="navbar-right">
+        <!-- qui in futuro possiamo mettere social o altro -->
+      </div>
+    </div>
+  </nav>
+
+  </div>
+</header>
+
+<section id="home" class="hero-progetto2">
+    <div class="hero-gioco-content" data-aos="fade-up">
+        <h1 class="hero-title-nao">Scopri il gioco!</h1>
+        <a href="#main-content" class="btn-scopri">Scopri di più</a>
+      </div>
+  </section>
+
+  <main class="main-content">
+    <section class="content-section" data-aos="fade-up">
+        <p>
+            Il gioco del progetto NAOGP rappresenta il cuore pulsante dell’esperienza simulativa che abbiamo voluto creare: un videogioco di guida realistico e coinvolgente, progettato per immergere il giocatore nel mondo del motorsport e, allo stesso tempo, fornire dati telemetrici utili all'interazione con il robot NAO.
+        </p>
+      </section>
+
+      <section id="main-content" class="content-section" data-aos="fade-up">
+        <h2>Descrizione tecnica</h2>
+        <p>
+            Il gioco è stato programmato in Unity, utilizzando il linguaggio C# e facendo largo uso del plugin professionale Vehicle Physics Pro, scelto per la sua accuratezza nella simulazione della fisica dei veicoli. Questo ci ha permesso di modellare un comportamento dinamico del kart il più vicino possibile alla realtà, includendo aspetti come la gestione dell’aderenza, la risposta dello sterzo, la frenata, le forze G laterali e longitudinali.
+
+Una delle principali difficoltà nello sviluppo è stata proprio la simulazione credibile della dinamica del veicolo: non volevamo creare un semplice gioco arcade, ma una vera e propria piattaforma di simulazione. Per questo abbiamo dovuto studiare e applicare nozioni di fisica della guida, lavorare sull’ottimizzazione del tracciato, e tarare con precisione i parametri del kart in modo che rispondessero realisticamente ai comandi del giocatore.
+
+        </p>
+      </section>
+
+      <section class="content-section content-video-section" data-aos="fade-up">
+        <div class="content-wrapper">
+          <div class="text-left">
+            <p>
+                Altra sfida importante è stata l’implementazione del sistema di raccolta dati telemetrici. Abbiamo progettato un sistema che registra, in tempo reale, numerosi parametri tra cui la velocità, l’accelerazione, la posizione, l’angolo di sterzo, la distanza dai checkpoint ideali e il tempo sul giro. Questi dati vengono esportati in formato CSV e poi utilizzati sia per l’addestramento dell’IA che per fornire feedback al pilota tramite il robot NAO.
+
+
+            </p>
+          </div>
+          <div class="video-right">
+            <video autoplay muted loop playsinline>
+              <source src="../img/video/video-gioco.mp4" type="video/mp4">
+              Il tuo browser non supporta il video HTML5.
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section" data-aos="fade-up">
+        <h2>Tra le feature principali del gioco troviamo:</h2>
+        <ul>
+            <li>
+                Un sistema di timing avanzato, con visualizzazione del giro attuale, del giro migliore e del delta time in tempo reale, grazie a una barra dinamica che aiuta il pilota a capire dove guadagna o perde tempo.
+                </li>
+            <li>Una mappa della pista in tempo reale con la posizione del kart e dei checkpoint.</li>
+            <li>Un’interfaccia utente basata su TextMeshPro, curata per essere leggibile e immersiva, adatta sia per l’uso didattico che competitivo.</li>
+            <li>Un sistema di registrazione dei micro-settori, che divide il tracciato in zone per fornire un’analisi dettagliata delle performance in ogni tratto.</li>
+            <li>Compatibilità con controller personalizzati, come un volante artigianale costruito con Arduino, per rendere l’esperienza ancora più autentica.</li>
+        </ul>
+        <p>
+            In sintesi, il gioco sviluppato per NAOGP non è solo un racing game: è una piattaforma educativa, un laboratorio di sperimentazione tecnica e un’interfaccia intelligente tra il pilota e l’intelligenza artificiale rappresentata da NAO.
+        </p>
+      </section>
+      
+      
+  </main>
+
+  <footer class="footer">
+    <div class="">
+      <h2>Follow us :3</h2>
+      <div class="social-links">
+        <a href="https://www.facebook.com/FermiOfficial?locale=it_IT" target="_blank" class="social-icon">
+          <img src="../img/icone/facebook_1384005.png" alt="Facebook">
+        </a>
+        <a href="https://www.tiktok.com/@naogp_?is_from_webapp=1&sender_device=pc" target="_blank" class="social-icon">
+          <img src="../img/icone/tiktok_3116491.png" alt="TikTok">
+        </a>
+        <a href="https://www.instagram.com/naogp_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" target="_blank" class="social-icon">
+          <img src="../img/icone/instagram_1384015.png" alt="Instagram">
+        </a>
+        <a href="https://www.youtube.com/@naogpracing" target="_blank" class="social-icon">
+          <img src="../img/icone/youtube_1384012.png" alt="YouTube">
+        </a>
+  
+      </div>
+      <p>&copy; 2025 NaoGP. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
+  
+  <script>
+    window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) { // dopo 50px di scroll
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+  </script>
+  
+  <script src="../js/team.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+  </body>
+  </html>
