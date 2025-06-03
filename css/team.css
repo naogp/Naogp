@@ -32,36 +32,6 @@
  margin-top: 40px;
 }
 
-.card-team {
- background: #fff;
- border-radius: 12px;
- box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
- overflow: hidden;
- transition: transform 0.4s, box-shadow 0.4s;
- display: flex;
- flex-direction: column;
- align-items: center;
-}
-.card-team:hover {
- transform: translateY(-10px);
- box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-}
-
-.team-photo {
- width: 100%;
- height: 400px;
- object-fit: cover;
-}
-
-.card-content-team {
- padding: 20px;
- text-align: center;
-}
-.card-content-team h3 {
- margin-bottom: 8px;
- font-size: 1.6rem;
- color: #222;
-}
 .card-content-team p {
  font-size: 1rem;
  color: #666;
@@ -133,3 +103,36 @@
     }
   }
   
+  .card-team {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.4s, box-shadow 0.4s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  min-height: 200px;
+}
+
+.card-content-team h3 {
+  margin-bottom: 8px;
+  font-size: 1.6rem;
+  color: #222;
+}
+
+.card-content-team h3 a {
+  text-decoration: none;
+  color: #e23333;
+  transition: color 0.3s;
+}
+
+.card-content-team h3 a:hover {
+  color: #2b313b;
+}
+
+.card-team:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
